@@ -1,0 +1,32 @@
+lab session: fm-lab-fm-compact-adv-75843-3668
+== default-ambient (compact-adviser=absent allowlist=absent) spawn rc=0
+   herdr pane: w1:p2
+   agent saw:
+     COMPACT_ADVISER_DISABLE=1
+     TYPESAFE_API_KEY=set(len=108)
+     CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1
+== default-allow (compact-adviser=absent allowlist=enabled) spawn rc=0
+   herdr pane: w1:p3
+   agent saw:
+     COMPACT_ADVISER_DISABLE=1
+     TYPESAFE_API_KEY=unset
+     CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=unset
+== optin-ambient (compact-adviser=present allowlist=absent) spawn rc=0
+   herdr pane: w1:p4
+   agent saw:
+     COMPACT_ADVISER_DISABLE=unset
+     TYPESAFE_API_KEY=set(len=108)
+     CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1
+== optin-allow-empty (compact-adviser=present allowlist=enabled) spawn rc=0
+   herdr pane: w1:p5
+   agent saw:
+     COMPACT_ADVISER_DISABLE=unset
+     TYPESAFE_API_KEY=unset
+     CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=unset
+== optin-allow-listed (compact-adviser=present allowlist=listed) spawn rc=0
+   herdr pane: w1:p6
+   agent saw:
+     COMPACT_ADVISER_DISABLE=unset
+     TYPESAFE_API_KEY=set(len=108)
+     CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1
+lab teardown ok: fm-lab-fm-compact-adv-75843-3668
